@@ -23,7 +23,7 @@ const searchCat = () => {
 
   const searchtxt = document.querySelector('#searchtxt')
   let query = searchtxt.value.replaceAll(" ", "+")
-  let URL = `https://api.pexels.com/v1/search/?query=${query}&orientation=landscape`
+  let URL = `https://api.pexels.com/v1/search/?query=cats+${query}&orientation=landscape`
   fetch(URL, pharams)
   .then(response => response.json())
   .then( (data) => {
