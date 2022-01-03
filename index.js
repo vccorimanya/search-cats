@@ -1,10 +1,7 @@
 
 const API_KEY = '563492ad6f917000010000012c1af287c4ad4bd6b5ac417c55027dd1';
 
-/* let URL_BASE = `https://api.pexels.com/v1/search/?query=${query}&orientation=landscape`; */
 let query = '';
-
-
 
 const pharams = {
   method: 'GET',
@@ -16,14 +13,13 @@ const pharams = {
 }
 
 
-const catsContainer = document.querySelector('.cats_container')
+const container = document.querySelector('.container')
 
 const searchCat = () => {
-  if (document.querySelector('.img_container')){
-    let img_container = document.querySelector('.img_container')
-    img_container.remove()
+  if (document.querySelector('.cats_container')){
+    let img = document.querySelector('.cats_container')
+    img.remove()
   }
-
 
   const searchtxt = document.querySelector('#searchtxt')
   let query = searchtxt.value.replaceAll(" ", "+")
@@ -33,10 +29,14 @@ const searchCat = () => {
   .then( (data) => {
     let cats = data.photos;
 
+    const catcontainer = document.createElement('div')
+    container.appendChild(catcontainer)
+    catcontainer.setAttribute("class", "cats_container")
+
     cats.map((cat) => {
       const img = document.createElement('img')
-      catsContainer.appendChild(img)
-      img.setAttribute("class", "img_container")
+      catcontainer.appendChild(img)
+      img.setAttribute("class", "cat_img")
       img.src = cat.src.medium
     })
   })
