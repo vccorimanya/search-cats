@@ -46,6 +46,14 @@ nav ul li a{
   color: black;
 }
 
+input{
+  background: transparent;
+  background: transparent;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+}
+
 .cats_container{
   display: grid;
   grid-template: 1fr 1fr  / 1fr 1fr ;

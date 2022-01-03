@@ -1,7 +1,7 @@
 
 const API_KEY = '563492ad6f917000010000012c1af287c4ad4bd6b5ac417c55027dd1';
 
-let query = '';
+let query = '' || 'runnign';
 
 const pharams = {
   method: 'GET',
